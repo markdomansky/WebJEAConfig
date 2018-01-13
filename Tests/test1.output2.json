@@ -1,0 +1,82 @@
+{
+    "Title":  "New WebJEA Title",
+    "defaultcommandid":  "test1",
+    "basePath":  "C:\\Working",
+    "LogParameters":  false,
+    "commands":  [
+                     {
+                         "id":  "overview",
+                         "displayname":  "Overview",
+                         "onloadscript":  "overview.ps1",
+                         "permittedgroups":  "*",
+                         "Script":  null
+                     },
+                     {
+                         "id":  "test1",
+                         "onloadscript":  "",
+                         "script":  "test1.ps1",
+                         "displayname":  "T1-Get Process",
+                         "permittedgroups":  [
+                                                 "*",
+                                                 "domain\\group"
+                                             ]
+                     },
+                     {
+                         "id":  "testListbox",
+                         "displayname":  "testListbox",
+                         "script":  "testListbox.ps1",
+                         "permittedgroups":  "*",
+                         "OnloadScript":  null
+                     },
+                     {
+                         "id":  "testDate",
+                         "displayname":  "testDate",
+                         "script":  "testDate.ps1",
+                         "permittedgroups":  "*",
+                         "OnloadScript":  null
+                     },
+                     {
+                         "id":  "testParser",
+                         "onloadscript":  "",
+                         "script":  "testparser.ps1",
+                         "displayname":  "T3-TestParser",
+                         "permittedgroups":  "domain1\\group1"
+                     },
+                     {
+                         "id":  "Sample1",
+                         "displayname":  "1-Reset Password",
+                         "script":  "sample1.ps1",
+                         "permittedgroups":  "mgmt1\\lgroup1",
+                         "OnloadScript":  null
+                     },
+                     {
+                         "id":  "Sample2",
+                         "displayname":  "2-Anything you want in your PS1",
+                         "script":  "c:\\dropbox\\scripts\\vb.net\\webjea\\demo\\sample2.ps1",
+                         "permittedgroups":  "domain1\\group2",
+                         "OnloadScript":  null
+                     },
+                     {
+                         "id":  "Sample3",
+                         "script":  "sample3.ps1",
+                         "displayname":  "3-More and More",
+                         "permittedgroups":  "domain1\\group3",
+                         "OnloadScript":  null
+                     },
+                     {
+                         "Script":  "somescript4.ps1",
+                         "OnloadScript":  "somescript3.ps1",
+                         "DisplayName":  "testNewDisplay2",
+                         "Id":  "testNew2",
+                         "PermittedGroups":  [
+                                                 "*"
+                                             ],
+                         "LogParameters":  true
+                     }
+                 ],
+    "PermittedGroups":  [
+                            "domain\\user1",
+                            "domain\\user2"
+                        ],
+    "SendTelemetry":  true
+}
