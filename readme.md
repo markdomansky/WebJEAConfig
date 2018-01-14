@@ -8,6 +8,10 @@ WebJEA allows you to dynamically build web forms for any PowerShell script.  Web
 
 * Domain Joined server running Windows 2016 Core/Full with PowerShell 5.1 <br>_(Windows 2012 R2 or PowerShell 4.0 should work, but haven't been tested.)_
 
+## Releases
+
+All releases are published on [PowerShellGallery.com](powershellgallery.com/)
+
 ## Installation
 
 WebJEAConfig is installed via PowerShellGallery.com.
