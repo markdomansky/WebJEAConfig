@@ -12,7 +12,7 @@
 RootModule = 'WebJEAConfig.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.9.0'
+ModuleVersion = '0.9.2'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -114,7 +114,7 @@ PrivateData = @{
 
         # ReleaseNotes of this module
         ReleaseNotes = @"
-0.9.1 corrected function export
+0.9.2 save-webjeaconfig no longer requires file parameter
 "@
 
         # External dependent modules of this module

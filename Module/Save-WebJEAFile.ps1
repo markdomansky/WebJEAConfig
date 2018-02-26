@@ -32,7 +32,7 @@ Purpose/Change:   Initial release
 
 param
 (
-    [Parameter(Position=0, Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName,
+    [Parameter(Position=0, ValueFromPipeline, ValueFromPipelineByPropertyName,
     HelpMessage='Where do you want to save the configuration to?')]
     [ValidateNotNullOrEmpty()]
     [string]$File
@@ -42,6 +42,10 @@ param
 begin {
     $WJConfig = Get-WJPrivateData -key "WJConfig"
     $WJConfigFile = Get-WJPrivateData -key "WJConfigFile"
+
+    if ($WJConfigFile -eq $null -and -not $PSBoundParameters.ContainsKey('File')) {
+        write-error "Parameter File required."
+    }
 } #/begin
 
 process {
