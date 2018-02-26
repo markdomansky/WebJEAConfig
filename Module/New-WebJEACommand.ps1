@@ -102,7 +102,7 @@ process {
         $newcmd = New-WJCommandObject
         $newcmd.id = $CommandId
 
-        $wjconfig.commands += $newcmd
+        [pscustomobject[]]$wjconfig.commands += $newcmd
         Set-WJPrivateData -Key "WJConfig" -Value $WJConfig
 
         Set-WebJEACommand @PSBoundParameters

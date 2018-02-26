@@ -47,7 +47,7 @@ process {
     $cmds = $WJConfig.commands
     $foundcmds = $cmds | where-object -FilterScript {$_.id -eq $CommandId} 
     $newcmds = $cmds | where-object -FilterScript {$_.id -ne $CommandId} 
-    $WJConfig.commands = $newcmds
+    [pscustomobject[]]$WJConfig.commands = $newcmds
     if ($foundcmds -eq $null) {write-warning "The command completed successfully, but nothing was modified."}
 
 } #/process
