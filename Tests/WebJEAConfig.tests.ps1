@@ -12,8 +12,8 @@ Describe "Testing WebJEA Module" {
 				Open-WebJEAFile -path ".\test1.input.json"
 			}
 			InModuleScope "WebJEAConfig" {
-				It "WJConfigFile Should be .\test1.input.json " {
-					Get-WJPrivateData "WJConfigFile" | should be "D:\Dropbox\Scripts\VB.NET\WebJEA\WebJEAConfig\Tests\test1.input.json"
+				It "WJConfigFile Should be .\test1.input.json" {
+					Get-WJPrivateData "WJConfigFile" | should be "C:\Dropbox\Scripts\PowerShell\WebJEAConfig\Tests\test1.input.json"
 				}
 				It "WJConfig Should have content" {
 					$WJConfig = Get-WJPrivateData "WJConfig"
@@ -38,8 +38,14 @@ Describe "Testing WebJEA Module" {
             }
             InModuleScope "WebJEAConfig" {
                 It "WJConfigFile is now test1.output.json" {
-                    Get-WJPrivateData "WJConfigFile" | should be "D:\Dropbox\scripts\vb.net\webjea\webjeaconfig\tests\test1.output.json"
+                    Get-WJPrivateData "WJConfigFile" | should be "C:\Dropbox\Scripts\PowerShell\WebJEAConfig\Tests\test1.output.json"
                 }
+            }
+		    It "Should Produce matching output and save to the default file" {
+                remove-item .\test1.output.json -ea 0 -confirm:$false #remove the file before we output
+                Save-WebJEAFile
+                (get-filehash ".\test1.output.json").hash  | should be (get-filehash ".\test1.input.json").hash
+                #remove-item .\test1.output.json -ea 0 -confirm:$false #remove the file before we output
             }
 		}
 	}
@@ -235,7 +241,7 @@ Describe "Testing WebJEA Module" {
             }
             InModuleScope "WebJEAConfig" {
                 It "WJConfigFile is now test1.output2.json" {
-                    Get-WJPrivateData "WJConfigFile" | should be "d:\Dropbox\scripts\vb.net\webjea\webjeaconfig\tests\test1.output2.json"
+                    Get-WJPrivateData "WJConfigFile" | should be "C:\Dropbox\Scripts\PowerShell\WebJEAConfig\Tests\test1.output2.json"
                 }
             }
 		}

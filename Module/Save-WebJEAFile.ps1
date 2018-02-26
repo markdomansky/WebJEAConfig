@@ -43,9 +43,6 @@ begin {
     $WJConfig = Get-WJPrivateData -key "WJConfig"
     $WJConfigFile = Get-WJPrivateData -key "WJConfigFile"
 
-    if ($WJConfigFile -eq $null -and -not $PSBoundParameters.ContainsKey('File')) {
-        write-error "Parameter File required."
-    }
 } #/begin
 
 process {
@@ -55,10 +52,11 @@ process {
 
 	#determine which file to save to
 	$outputfile = $null
-	if ($file -ne $null) {
+	if ($PSBoundParameters.ContainsKey('file')) {
+        write-verbose "Saving to $File"
     	$outputfile = $file
 	} elseif ($WJConfigFile -ne $null) {
-        write-verbose "Overwriting Existing File"
+        write-verbose "Overwriting Existing File ($WJConfigFile)"
 		$outputfile = $WJConfigFile
 	} else {
 		#there wasn't a file in privatedata, and there wasn't one specified
