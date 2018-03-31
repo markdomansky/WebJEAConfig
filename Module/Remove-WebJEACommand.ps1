@@ -48,6 +48,7 @@ process {
     $foundcmds = $cmds | where-object -FilterScript {$_.id -eq $CommandId} 
     $newcmds = $cmds | where-object -FilterScript {$_.id -ne $CommandId} 
     [pscustomobject[]]$WJConfig.commands = $newcmds
+    if ($CommandId -eq $WJConfig.defaultcommandid) {Write-Warning "Default Command ID Removed."}
     if ($foundcmds -eq $null) {write-warning "The command completed successfully, but nothing was modified."}
 
 } #/process

@@ -71,11 +71,9 @@ param
     [string]$DisplayName, 
 				
     [Parameter(ValueFromPipelineByPropertyName, HelpMessage='What do you want the Onload Script to be?')]
-    [ValidateNotNullOrEmpty()]
     [string]$OnloadScript, 
 		
     [Parameter(ValueFromPipelineByPropertyName, HelpMessage='What do you want the Script to be?')]
-    [ValidateNotNullOrEmpty()]
     [string]$Script, 
 		
     [Parameter(ValueFromPipelineByPropertyName, HelpMessage='What do you want the Synopsis to be?')]
@@ -87,7 +85,6 @@ param
     [boolean]$LogParameters, 
 		
     [Parameter(ValueFromPipelineByPropertyName, HelpMessage='What do you want the Permitted Groups to be? (domain\usergroup)')]
-    [ValidateNotNullOrEmpty()]
     [string[]]$PermittedGroups
 		
 ) #/param
